@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador custos e lucros na aquaponia</title>
+</head>
+
+<body>
+    <span>Por favor, para uma maior precisão preencha os campos abaixo:</span><br><br>
+    Informe em m2 á area destinada para construção da estufa: <input type="text" id="ipt_estufa"><br><br>
+    Informe em m3, o volume desejado do(s) tanque(s): <input type="text" id="ipt_volume"><br><br>
+    <button onclick="calcular()">Simular meu sistema!</button>
+
+    <div id="div_mensagem"></div>
+</body>
+
+</html>
+
+<script>
+    function calcular() {
+        var estufa = Number(ipt_estufa.value)
+        var volume = Number(ipt_volume.value)
+        var preco_estufa = 0;
+        var preco_sistema = 0;
+
+        if (estufa < 25) {
+            div_mensagem.innerHTML = `Infelizmente você não possui a área miníma necessária, recomendamos que ela seja de no mínimo 25m2.`
+
+        }
+
+        if (estufa >= 25) {
+
+            //montagem estufa:
+            var esteio = estufa * 233.33;
+            var mao_obra = (estufa + 2) * 250; //media de 1 metro quadrado por dia + margem de erro de 2m2 no tempo de produção
+            var sombrite = estufa * 85.50;
+            var plastico_agricola = estufa * 25;
+            var caixaria = estufa * 40;
+            var tubo = estufa * 36;
+
+            preco_estufa = esteio + mao_obra + sombrite + plastico_agricola + caixaria + tubo;
+
+
+            //equipamentos para montagem do sistema de aquaponia:
+            var tanque = volume * 210;
+            var malha_hidro = volume * 357.69;
+            var tambor = volume * 500;
+            var bomba_aeracao = volume * 70;
+            var bomba = (volume / 1.5) * 120;
+
+            preco_sistema = tanque + malha_hidro + tambor + bomba_aeracao + bomba;
+
+            //Custo produção:
+            var eletricidade
+            var racao_tilapia
+            var depreciacao
+            var kits
+
+            //lucro esperado:
+
+            div_mensagem.innerHTML = `O custo para a construção da estufa é de aproximadamente R$${preco_estufa}: <br> -Esteio: R$${esteio}; <br> -Mão de obra: R$${mao_obra}; <br> -Sombrite: R$${sombrite}; <br> -Plástico Agrícola: R$${plastico_agricola}; <br> -Caixaria: R$${caixaria}; <br> -Tubo: R$${tubo}. <br><br>
+            O custo aproximado com o novo sistema será de R$${preco_sistema}, sendo: <br> -Tanque: R$${tanque}; <br> -Malha hidráulica: R$${malha_hidro}; <br>-Tambor: R$${tambor};<br>-Bomba Aeração: R$${bomba_aeracao}; <br>-Bomba: R$${bomba}.`
+        }
+
+        
+
+
+    }
+</script>
