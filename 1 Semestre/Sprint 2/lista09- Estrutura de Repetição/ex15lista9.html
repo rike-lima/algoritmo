@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 15- Lista 9</title>
+</head>
+
+<body>
+    Informe quantas pessoas entrarão no carro: <input type="text" id="ipt_pessoas"><br>
+    <button onclick="carona()">#PartiuCarona</button>
+    <div id="div_msg"></div>
+
+</body>
+
+</html>
+
+<script>
+    function carona() {
+       /*div_msg.innerHTML = "";
+         var passageiros = Number(ipt_pessoas.value);
+ 
+         for (var cont = 1; cont <= passageiros; cont++) {
+             if (cont == 1) {
+                 div_msg.innerHTML += `Entrou o ${cont}° passageiro (que é o(a) motorista).<br>`
+             } else if (cont > 5) {
+                 div_msg.innerHTML += `O ${cont}° passageiro terá que esperar! <br>`
+             } else { div_msg.innerHTML += `Entrou o ${cont}° passageiro.<br>` }*/
+
+        div_msg.innerHTML = "";
+       var passageiros = Number(ipt_pessoas.value);
+
+        for (var cont = 1; cont <= passageiros; cont++) {
+            if (cont == 1) {
+                div_msg.innerHTML += `Entrou o ${cont}° passageiro (que é o(a) motorista).<br>`
+            } else if (cont <= 5) {
+                div_msg.innerHTML += `Entrou o ${cont}° passageiro.<br>`
+            } else { div_msg.innerHTML += `O ${cont}° passageiro terá que esperar! <br>` }
+
+        }
+    }
+
+</script>
+

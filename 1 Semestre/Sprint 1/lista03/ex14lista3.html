@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 14</title>
+</head>
+
+<body>
+    <h1>Dragon Ball</h1>
+    Informe o ki base: <input type="text" id="input_ki"><br>
+    Transformar em... <br>
+    <button onclick="ssj()">SSJ</button> <button onclick="ssj_dois()">SSJ2</button><button
+        onclick="ssj_tres()">SSJ3</button>
+
+    <div id="div_msg"></div>
+
+</body>
+
+</html>
+<script>
+    var ki = 0;
+    function ssj() {
+        var valor = Number(input_ki.value)
+        ki = valor * 50
+
+        div_msg.innerHTML = `Após se transformar em SSJ, o ki desse Sayajin passa a ser de ${ki}.`
+    }
+    function ssj_dois() {
+        ki = Number(input_ki.value) * 100
+
+        div_msg.innerHTML = `Após se transformar em SSJ 2, o ki desse Sayajin passa a ser de ${ki}.`
+    }
+    function ssj_tres() {
+        ki = Number(input_ki.value) * 200
+
+        div_msg.innerHTML = `Após se transformar em SSJ 3, o ki desse Sayajin passa a ser de ${ki}.`
+    }
+</script>

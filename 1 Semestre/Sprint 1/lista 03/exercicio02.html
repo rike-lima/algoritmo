@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 02- Lista 03</title>
+</head>
+
+<body>
+  <h1>Todo mundo adora pizza!</h1>
+  Valor total do pedido: <input type="text" id="input_valor"><br><br>
+  Número de pessoas para dividir: <input type="text" id="input_pessoas"><br><br>
+  <button onclick="divisao()">#LovePizza</button>
+</body>
+
+</html>
+
+<script>
+  function divisao() {
+    
+    var pessoas = Number(input_pessoas.value);
+    var valor = Number(input_valor.value)/pessoas;
+
+    alert('Cada um dos ' + pessoas + ' amigos vai pagar R$' + valor+ '.')
+
+  }
+
+</script>

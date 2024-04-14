@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 6- Lista9</title>
+</head>
+
+<body>
+    <span>Pessoa que mais ama:</span> <input type="text" id="ipt_amor">
+    <span>Quanto você ama?</span> <input type="text" id="ipt_valor">
+    <button onclick="analisar()">Expressar amor</button>
+    <div id="div_msg"></div>
+</body>
+
+</html>
+
+<script>
+    function analisar(){
+        var valor=Number(ipt_valor.value);
+        var nome=ipt_amor.value
+        var texto= `${nome}, eu te amo.`
+
+        for(cont=1; cont<=valor; cont++){
+          div_msg.innerHTML+= `${texto}<br>`
+        }
+    }
+</script>

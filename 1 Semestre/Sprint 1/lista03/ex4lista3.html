@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio04</title>
+</head>
+<body>
+    <h1>Dragon Ball</h1>
+
+    Nome do guerreiro: <input type="text" id="input_nome"> <br><br>
+    Ki normal do guerreiro: <input type="text" id="input_ki"><br>
+    <button onclick="resultado()">Exibir ki em cada forma</button>
+
+
+</body>
+</html>
+
+<script>
+  function resultado(){
+    var ki= Number(input_ki.value);
+    var sj= ki*50;
+    var sj2= ki*100;
+
+    alert('Na forma de Super Saijin, ' + input_nome.value + ' tem o ki equivalente à ' + sj + '.');
+    alert('Na forma de Super Saijin 2, ' + input_nome.value + ' tem o ki equivalente à ' + sj2 + '.');
+
+  }
+
+</script>

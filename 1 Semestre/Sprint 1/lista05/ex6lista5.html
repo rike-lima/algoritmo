@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 6- Lista 5</title>
+</head>
+
+<body>
+    Qual dos seguintes times de São Paulo o você torce (São Paulo, Palmeiras, Corinthians, Santos): <input type="text"
+        id="ipt_times">
+    <button onclick="executar()">Fale sobre esse time</button>
+    <div id="div_msg"></div>
+</body>
+
+</html>
+
+<script>
+    function executar() {
+        var time = ipt_times.value
+        if (time == 'Corinthians') {
+
+            div_msg.innerHTML = `Salve o Corinthians.`
+        } else if (time == 'Palmeiras') {
+
+            div_msg.innerHTML = `Salve o alviverde imponente.`
+        } else if (time == 'Santos') {
+
+            div_msg.innerHTML = `Agora quem dá a bola é o Santos.`
+        } else if (time == 'São Paulo') {
+
+            div_msg.innerHTML = `Salve o Tricolor paulista.`
+        }
+
+
+
+    }
+</script>

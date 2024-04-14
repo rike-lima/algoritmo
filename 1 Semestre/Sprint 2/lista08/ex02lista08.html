@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2- Lista 8</title>
+</head>
+
+<body>
+    <span>Informe a altura da pessoa encontrada:</span> <input type="text" id="ipt_altura"><br><br>
+
+    <label>
+        <span>Selecione a cor do cabelo:</span>
+        <select name="cabelo" id="slc_cabelo">
+
+            <option value="#" selected disabled>Selecione</option>
+            <option value="1">Preto</option>
+            <option value="2">Vermelho</option>
+            <option value="3">Amarelo</option>
+            <option value="4">Castanho</option>
+        </select><br>
+        <button onclick="match()">Deu match?</button>
+    </label>
+    <div id="div_img"></div>
+</body>
+
+</html>
+
+<script>
+
+    function match() {
+        var altura = Number(ipt_altura.value);
+        var cor_cabelo = slc_cabelo.value
+
+        if ((cor_cabelo == "3" || cor_cabelo == "4") && altura < 1.85) {
+            div_img.innerHTML = '<img src="https://media.istockphoto.com/id/1138913775/pt/vetorial/smiling-emoticon-with-3-hearts.jpg?s=612x612&w=0&k=20&c=Km7v1ygOYEt88U0Ms3p5M10YrewdyJM9rBQhsWi5-TE=" alt="carinha feliz" heigth= "200px"width="200px" /> '
+        } else {
+            div_img.innerHTML
+        }
+    }
+</script>

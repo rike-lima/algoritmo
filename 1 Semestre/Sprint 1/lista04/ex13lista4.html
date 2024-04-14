@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 13</title>
+</head>
+
+<body>
+  Informe a primeira nota: <input type="text" id="ipt_n1">
+  Informe a segunda nota: <input type="text" id="ipt_n2">
+
+  <button onclick="calcular()">Verificar situação</button>
+
+
+</body>
+
+</html>
+
+<script>
+  function calcular() {
+    var n1 = Number(ipt_n1.value);
+    var n2 = Number(ipt_n2.value);
+    var media = (n1 + n2) / 2;
+
+    if (media >= 6) {
+      alert('Parabéns, aprovado!');
+    }
+    if (media < 6) {
+      alert('Tente outra vez...')
+    }
+
+  }
+</script>

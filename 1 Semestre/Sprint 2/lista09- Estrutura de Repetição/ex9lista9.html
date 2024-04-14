@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Palavra: <input type="text" id="ipt_frase"><br>
+    Repetições: <input type="text" id="ipt_repet"><br>
+    <button onclick="papagaiar()">Papagaio</button>
+    
+</body>
+</html>
+
+<script>
+function papagaiar(){
+    var numero= Number(ipt_repet.value);
+    var frase= ipt_frase.value
+    var texto= " "
+
+    for (var cont =1; cont<= numero; cont ++){
+        texto+=frase;
+        
+    }
+
+    for (contador=1; contador<=numero; contador ++){
+        alert(`${texto}\n`)
+    }
+}
+</script>

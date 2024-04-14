@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio6</title>
+</head>
+<body>
+    <h1>Calculo</h1>
+    Número 1: <input type="text" id="input_n1">
+    Número 2: <input type="text" id="input_n2"><br><br>
+
+    <button onclick="soma()">Soma</button>
+    <button onclick="sub()">Subtração</button>
+    <button onclick="multi()">Multiplicação</button>
+    <button onclick="divi()">Divisão</button>
+</body>
+</html>
+
+<script>
+    function soma(){
+        var n1= Number(input_n1.value);
+        var n2= Number(input_n2.value);
+        var sum= n1+n2
+
+        alert('A soma entre ' +input_n1.value + ' + ' + input_n2.value +' é ' + sum+ '.');         
+    }
+    function sub(){
+        var n1= Number(input_n1.value);
+        var n2= Number(input_n2.value);
+        var sub= n1-n2
+
+        alert('A subtração entre ' +n1 + ' - ' + n2 +' é ' + sub+ '.');         
+    }
+    function multi(){
+        var n1= Number(input_n1.value);
+        var n2= Number(input_n2.value);
+        var multiplicacao= n1*n2
+
+        alert('A multiplicação entre ' +n1 + ' * ' + n2 +' é ' + multiplicacao+ '.');  
+   
+    }
+    function divi(){
+        var n1= Number(input_n1.value);
+        var n2= Number(input_n2.value);
+        var divisao= n1/n2
+
+        alert('A divisão entre ' +n1 + ' e ' + n2 +' é ' + divisao+ '.');  
+    }
+
+</script>

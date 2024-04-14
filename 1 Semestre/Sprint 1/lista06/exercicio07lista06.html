@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 07- Lista 06</title>
+</head>
+<body>
+    <span>Username:</span> <input type="text" id="ipt_user"><br>
+    <span>Senha: </span> <input type="password" id="ipt_senha"><br>
+    <button onclick="login()">Entrar</button>
+</body>
+</html>
+
+<script>
+    function login(){
+    var user= ipt_user.value;
+    var senha= ipt_senha.value;
+
+    if (user == "SPTech" && senha == 'digital'){
+        alert('Usuário autenticado com sucesso!')
+    } else{
+    alert('Falha na autenticação.')
+    }
+}
+</script>
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verificação</title>
+</head>
+
+<body>
+  <div>
+    <h1>Sistema de verificação de acesso</h1>
+
+    <span><b>Informe sua credencial (Atleta/ Treinador):</b></span> <br><input type="text" id="ipt_cred"
+      placeholder="n° da credencial"><br><br>
+
+    <select name="categoria" id="sel_cat">
+      <option value="#" id="opt_1" selected disabled>Selecione a categoria</option>
+      <option value="1" id="atleta">Atleta</option>
+      <option value="2" id="treinador">Treinador</option>
+      <option value="3" id="outros">Outros</option>
+    </select><br><br>
+
+    <button onclick="verificar()">Verificar</button><br>
+    <div id="div_msg"></div><br><br>
+
+  </div>
+
+</body>
+
+</html>
+
+<script>
+  function verificar() {
+    var categoria = sel_cat.value
+    var credencial = Number(ipt_cred.value)
+
+    if (categoria == '1') {
+      div_msg.innerHTML = 'Seja bem-vindo e tenha uma ótima competição!'
+    } else if (categoria == '2' && credencial <= 9999 && credencial >= 1000) {
+      div_msg.innerHTML = 'Bem-vindo treinador! Ande sempre com sua credencial para poder acessar todas as áreas.'
+    } else {
+      div_msg.innerHTML = 'Acesso negado, credencial inválida ou cargo não autorizado à entrar nesse local.'
+    }
+
+
+  }
+
+</script>

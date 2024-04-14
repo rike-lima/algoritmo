@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pre-AC1</title>
+</head>
+
+<body>
+    Informe a distância a ser percorrida: <input id="input_distancia"></input><br>
+    Tempo de duração da viagem: <input id="input_duracao"></input><br>
+    Informe a quantidade de passageiros: <input id="input_passageiro"></input><br>
+    Inicio de horário da viagem: <input id="input_hora"></input><br>
+
+    <button onclick="calcular()">Realizar viagem</button>
+    <div id="div_msg"></div>
+
+</body>
+
+</html>
+
+<script>
+    function calcular() {
+        var distancia = Number(input_distancia.value);
+        var duracao = Number(input_duracao.value);
+        var passageiro = Number(input_passageiro.value);
+        var hora = Number(input_hora.value);
+
+        var preco_viagem = 0.77; // valor por km
+        var tempo_base = 1.8; // tempo estimado por km
+
+        var custo_percurso = distancia * preco_viagem; // verificada
+        var estimativa_tempo = distancia * tempo_base; // verifcada
+
+
+        var porc_duracao = duracao * 0.10;
+        var acresc_tempo = estimativa_tempo + porc_duracao;
+        var decres_tempo = estimativa_tempo - porc_duracao;
+        var duracao_bonus = 0;
+
+        //Bônus ou ônus tempo de viagem
+        if (duracao > acresc_tempo) {
+            duracao_bonus = custo_percurso * 0.07;
+            custo_percurso = custo_percurso + duracao_bonus
+        }
+
+        if (duracao <= decres_tempo) {
+            duracao_bonus = custo_percurso * 0.08;
+            custo_percurso = custo_percurso - duracao_bonus
+        }
+
+        // Passageiros 
+        if (passageiro >= 2) {
+            passageiro -= 1
+            custo_percurso = custo_percurso + (passageiro * 3);
+        }
+
+        //Horários corrida
+        var horario_bonus = 0
+        if (hora <= 6) {
+            horario_bonus = custo_percurso * 0.09;
+            custo_percurso = custo_percurso - horario_bonus;
+        }
+        if (horario_bonus > 20) {
+            horario_bonus = custo_percurso * 0.11;
+            custo_percurso = custo_percurso + horario_bonus;
+        }
+
+        //combustivel
+
+       // var gasto_combustivel= 
+       // var preco_combustivel= 
+
+        div_msg.innerHTML = `A viagem foi iniciada às  ${horas} e tinha estimativa de ${estimativa_tempo} minutos e durou ${duracao} minutos, percorrendo ${distancia} KM, com ${passageiro} passageiros, totalizando R$${custo_percurso} do preço da corrida. Com essa distância, foram consumidos ${combustivel} litros de gasolina, totalizando R$${gasto_combustivel} de consumo.` 
+         
+       }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

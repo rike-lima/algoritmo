@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 17- Lista 9</title>
+</head>
+
+<body>
+    Quantas latas de Coca-Cola você acha que consumiu na vida: <br>
+    <input type="text" id="ipt_quant"> <br><br>
+    <button onclick="exibir()">Ver quantidade</button>
+    <div id="div_msg"></div>
+
+</body>
+
+</html>
+
+<script>
+    function exibir() {
+        var quant = Number(ipt_quant.value)
+        var imagem = `    <img width="100px" height="200px" src="https://www.imigrantesbebidas.com.br/bebida/images/products/full/1984-refrigerante-coca-cola-lata-350ml.jpg" alt="">`
+
+        for (var cont = 1; cont<= quant; cont++){
+        div_msg.innerHTML+=imagem;
+        }
+
+    }
+</script>

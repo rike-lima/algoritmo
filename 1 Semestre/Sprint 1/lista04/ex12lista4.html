@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 12</title>
+</head>
+
+<body>
+  Pesso total do elevador: <input type="text" id="ipt_peso">
+  <button onclick="movimento()">Ligar elevador</button>
+
+</body>
+
+</html>
+
+<script>
+  function movimento() {
+    var peso = Number(ipt_peso.value)
+    if (peso > 500) {
+      alert('Alguém precisa descer do elevador.');
+    }
+    else {
+      alert('Elevador vai se mover.');
+    }
+  }
+</script>

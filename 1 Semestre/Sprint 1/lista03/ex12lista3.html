@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 12</title>
+</head>
+
+<body>
+    <h1>Todos gostamos de pizza!</h1>
+    Qual o sabor da pizza? <input type="text" id="input_sabor"><br><br>
+    Qual o valor da pizza? <input type="text" id="input_valor"><br><br>
+    Quantos amigos dividir? <input type="text" id="input_amigos"><br>
+    <button onclick="calculo()">Ver valor por amigo</button>
+
+    <div id="div_valor"></div>
+</body>
+
+</html>
+
+<script>
+
+    var divisao = 0;
+    function calculo() {
+        var sabor = input_sabor.value;  
+        var valor = Number(input_valor.value);
+        var amigos = Number(input_amigos.value);
+        var total = valor * 1.10;
+
+        divisao = total / amigos;
+        
+
+        div_valor.innerHTML= `Cada amigo vai colaborar com R$${divisao} para a pizza de ${sabor}.   `
+
+    }
+</script>

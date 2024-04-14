@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio08</title>
+</head>
+<body>
+    <h1>Controles de depósito</h1>
+    Valor da movimentação: <input type="text" id="input_valor">
+    <button onclick="deposito()">Depositar</button>
+    <button onclick="saque()">Sacar</button>
+    
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+
+    var saldo= 0;
+    
+    function deposito(){
+        var valor= Number(input_valor.value);
+        saldo+= valor;
+    
+        div_mensagem.innerHTML += `<br>Depósito de R$${valor} efetuado! Saldo atual de R$${saldo}.`
+
+    }
+
+    function saque(){
+        var valor= Number(input_valor.value);
+        saldo -= valor
+
+        div_mensagem.innerHTML += `<br>Depósito de R$${valor} efetuado! Saldo atual de R$${saldo}.`
+    }
+
+</script>

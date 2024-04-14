@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exerc[icio 3- Lista 5</title>
+</head>
+
+<body>
+    Informe a temperatura: <input type="text" id="ipt_temperatura">
+    <button onclick="analisar()">Analisar</button>
+    <div id="div_msg"></div>
+</body>
+
+</html>
+
+<script>
+    function analisar() {
+        var temperatura = Number(ipt_temperatura.value);
+        if (temperatura < 14) {
+            div_msg.innerHTML = 'Congelante!'
+        } else if (temperatura <= 21) {
+            div_msg.innerHTML = 'Com frio!'
+        } else if (temperatura <= 24) {
+            div_msg.innerHTML = 'Confortavél'
+        } else if (temperatura <= 31) {
+            div_msg.innerHTML= 'Com calor!'
+        } else  div_msg.innerHTML= 'Calor escaldante!'
+    }
+    
+</script>

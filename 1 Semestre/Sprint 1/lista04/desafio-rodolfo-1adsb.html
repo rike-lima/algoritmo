@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio IMC</title>
+</head>
+
+<body>
+    <h1>Cálculo de IMC</h1>
+    Nome completo: <input type="text" id="inputNome">
+    Informe seu peso em quilogramas (Kg): <input type="text" id="inputPeso">
+    Informe sua altura em metros(m): <input type="text" id="inputAltura"><br>
+    <button onclick="calcular()">Calcular IMC</button>
+
+</body>
+
+</html>
+
+<script>
+
+
+    function calcular() {
+        var nome = inputNome.value
+
+        var peso = Number(inputPeso.value);
+        var altura = Number(inputAltura.value);
+        var imc = peso / (altura * altura);
+
+        var altP = altura / 0.3048;
+        var pesoOnc = peso * 35.274;
+        var imc_dois = pesoOnc / (altP * altP);
+
+        alert(`${nome} seu IMC é de ${imc}. \nSua altura em pés (ft) é: ${altP};\nSeu peso em onça (Oz) é: ${pesoOnc}\nSeu IMC em oz/ ft² é: ${imc_dois}.`)
+    }
+</script>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 13</title>
+</head>
+<body>
+    <h1>Passagem</h1>
+    Informe valor da passagem: <input type="text" id="input_passagem"><br>
+    Viagens realizadas no mês: <input type="text" id="input_viagens"><br>
+    Distancia percurso(em km): <input type="text" id="input_distancia"><br>
+    <button onclick="calculo()">Calcular VT</button>
+
+    <div id="div_total"></div>
+</body>
+</html>
+<script>
+    var passagem=0;
+    var viagem=0;
+    var distancia=0;
+
+    function calculo(){
+
+        passagem= Number(input_passagem.value);
+        viagem= Number(input_viagens.value);
+        distancia= Number(input_distancia.value);
+
+        var viagem_bus= viagem*0.90;
+        var viagem_app= viagem*0.10;
+
+        //total=((viagem*0.90)*passagem)+((distancia*0.10)*0.75)
+
+        var total= (viagem_bus*passagem)+((distancia*0.75)*viagem_app);
+
+        var mensagem = `Você vai gastar R$${total} por mês com trasnporte.`
+
+div_total.innerHTML= mensagem
+
+    }
+</script>

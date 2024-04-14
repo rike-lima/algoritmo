@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 4</title>
+</head>
+
+<body>
+  <h1>Exercício 4</h1>
+
+  Rua, avenida ou vila que você mora: <input type="text" id="endereco"> <br><br>
+  Número da casa: <input type="text" id="numero"> <br><br>
+  <button onclick="local()">Onde eu moro</button>
+
+</body>
+
+</html>
+
+<script>
+  function local() {
+    alert('Seu logradouro é '+ endereco.value + '.')
+    alert('O número do seu logradouro é ' + numero.value + '.')
+  }
+</script>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 9</title>
+</head>
+
+<body>
+    Qual a última SITCOM que você assistiu? <input type="text" id="ipt_sitcom">
+    Quantos episódios dessa série você já assistiu? <input id="ipt_eps"></input><br>
+    <button onclick="nivel()">Verificar nível</button>
+
+    <div id="div_msg"></div>
+
+</body>
+
+</html>
+
+<script>
+    function nivel() {
+        var nome = ipt_sitcom.value;
+        var eps = Number(ipt_eps.value);
+        var mediaEps = 22;
+        var horasEps = (eps * mediaEps) / 60;
+
+        div_msg.innerHTML = `Vejo que você gosta da série ${nome}.`
+        if (horasEps > 30) {
+            div_msg.innerHTML += `<br>Uau, você realmente gosta dessa série!`
+        }
+    }
+
+</script>

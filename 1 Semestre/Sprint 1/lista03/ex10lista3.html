@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio10</title>
+</head>
+<body>
+    <h1>Eleições</h1>
+    Votos candidato A: <input type="text" id="input_candA"><br><br>
+    Votos candidato B: <input type="text" id="input_candB"><br><br>
+    Votos em branco: <input type="text" id="input_branco"><br><br>
+    Votos nulos: <input type="text" id="input_nulos"><br><br>
+
+    <button onclick="resultado()">Resultados da Eleição</button>
+
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+
+    var total = 0;
+    function resultado(){
+        var candA= Number(input_candA.value);
+        var candB= Number(input_candB.value);
+        var branco= Number(input_branco.value);
+        var nulo= Number(input_nulos.value);
+        var invalidos= branco + nulo; //juntar os votos considerados inválidos
+        total= candA+candB+branco+nulo; //saber o total de votos que foram registrados
+
+        //calculos de porcentagem
+        var porce_a= (candA/total)*100;
+        var porce_b= (candB/total)*100; 
+        var porce_i= (invalidos/total)*100;
+
+
+      div_mensagem.innerHTML= `Total de votos: ${total};<br> Candidato A: ${porce_a}% (${candA}); <br> Candidato B: ${porce_b}% (${candB}); <br>Inválidos: ${porce_i}% (${invalidos}).`
+
+    }
+</script>

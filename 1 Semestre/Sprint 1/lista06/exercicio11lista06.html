@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 11- Lista06</title>
+</head>
+
+<body>
+    <span>Passagens que deseja emitir:</span> <input type="text" id="ipt_passagem">
+    <button onclick="analisar()">Comprar</button>
+    <div id="div_msg"></div>
+</body>
+
+</html>
+
+<script>
+    function analisar() {
+        var preco = 4.40;
+        var passagem = Number(ipt_passagem.value);
+        var total = passagem * preco;
+
+        if (passagem >= 8 && passagem <= 19) {
+            preco *= 0.97;
+            total=passagem* preco;
+            div_msg.innerHTML= `Total a pagar é de R$${total} em ${passagem} passagens.`
+        } else if (passagem>=20 && passagem<=49){
+            preco *= 0.95;
+            total=passagem* preco;
+            div_msg.innerHTML= `Total a pagar é de R$${total} em ${passagem} passagens.`
+        } else if(passagem == 50){
+            preco*=0.93;
+            total=passagem* preco;
+            div_msg.innerHTML= `Total a pagar é de R$${total} em ${passagem} passagens.`
+        } else{
+            alert('Quantidade inválida para o Fidelidade!')
+        }
+
+        
+    }
+</script>

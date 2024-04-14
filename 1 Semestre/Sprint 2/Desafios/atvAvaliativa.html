@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco KNAB</title>
+</head>
+
+<body>
+    <div id="div_primeiraTela">
+        <h1>Seja bem vindo ao Banco KNAB</h1><br>
+        <h3>Simulação de Empréstimo e Investimentos</h3><br>
+        <p><b>Entre com os dados de sua conta:</b></p>
+        <input type="text" id="ipt_conta" placeholder="Conta"></input> <input type="text" id="ipt_digito"
+            placeholder="Digito"><input type="password" id="ipt_senha" placeholder="Senha"><br><br>
+
+        <button onclick="simular()">Simular</button>
+        <div id="div_msg"></div>
+    </div>
+    <div id="div_segundaTela">
+        <h1>O Banco KNAB é sua melhor opção</h1><br>
+        <h3>Empréstimos e investimentos com a melhor taxa do mercado</h3><br>
+        <p><b>Entre com os dados da simulação</b></p><br><br>
+        <span>Valor da operação:</span> <input type="text" id="ipt_valor"> <br><br>
+        <select name="SelectOp" id="sel_op">
+            <option value="#" selected disabled>Selecione a operação</option>
+            <option value="1">Empréstimo</option>
+            <option value="2">Investimento</option>
+        </select>
+        <select name="SelectPrazo" id="sel_prazo">
+            <option value="#" selected disabled>Selecione o prazo</option>
+            <option value="1">Curto</option>
+            <option value="2">Médio</option>
+            <option value="2">Longo</option>
+        </select>
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    function simular() {
+        var conta = Number(ipt_conta.value);
+        var digito = Number(ipt_digito.value);
+        var senha = ipt_senha.value;
+
+        if (conta != 0 && digito == conta % 10) {
+            if ((digito == 0 || digito == 1 || digito == 2 || digito == 3) && senha == 'manaus') {
+                div_msg.innerHTML = '';
+            } else if (digito >= 4 && digito <= 7 && senha == 'recife') {
+                div_msg.innerHTML = '';
+            } else if (digito > 7 && senha == 'fortaleza') {
+                div_msg.innerHTML = '';
+            }
+        } else alert('Acesso Negado: os dados inseirods não correspondem')
+
+    }
+</script>

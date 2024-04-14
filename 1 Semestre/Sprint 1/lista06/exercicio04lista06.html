@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 04 - Lista 06</title>
+</head>
+
+<body>
+    <span> Que horas você costuma acessar a Netflix(formato de 24hrs):</span> <input type="text" id="ipt_hora">
+    <button onclick="analisar()">Ver recomendação</button>
+    <div id="div_msg"></div>
+</body>
+
+</html>
+<script>
+    function analisar() {
+        var hora = Number(ipt_hora.value);
+
+        if (hora >= 19 && hora <= 21) {
+            div_msg.innerHTML = `Não é recomendável que você assista sua série favorita no horário X!`
+        } else {
+            div_msg.innerHTML = `O horário X é adequado para assistir sua série favorita!`
+        }
+    }
+</script>

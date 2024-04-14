@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 5</title>
+</head>
+
+<body>
+    Informe a quantidade de KWh consumida por mês: <input type="text" id="inputEnergia">
+    <button onclick="calculo()">Calcular conta de luz</button>
+
+
+</body>
+
+</html>
+
+<script>
+    function calculo() {
+        var energia = Number(inputEnergia.value)
+        var conta = energia * 0.85
+        if (energia >= 100) {
+            alert("Sua conta é R$" + conta);
+        } else {
+            conta -= conta * 0.10
+            alert(`Sua conta é de R$${conta}, e você teve 10% de desconto.`);
+
+        }
+    }
+</script>

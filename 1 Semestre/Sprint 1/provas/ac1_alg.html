@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Quantidade de energia consumida em kWh (apenas números): <input type="text" id="ipt_energia"><br>
+    Bandeira tarifária da energia ("vermelha", "amarela" ou "verde"): <input type="text" id="ipt_bandeira"><br>
+    Volume de água consumido em litros (apenas números): <input type="text" id="ipt_agua"><br>
+    Quantidade de vazamentos de água na casa (apenas números): <input type="text" id="ipt_vazamento"><br>
+    Volume de gás consumido em litros (apenas números): <input type="text" id="ipt_gas"><br>
+    Quantidade de MB (megabyte) do plano de internet (apenas números): <input type="text" id="ipt_internet"><br>
+    Possui linha telefônica vinculada ao plano de internet ("sim" ou "não"): <input type="text"
+        id="ipt_telefone"><br><br>
+    <button onclick="calcular()">Calcular despesas fixas</button>
+    <div id="div_msg"></div>
+
+
+</body>
+
+</html>
+
+<script>
+
+    var conta_energia = 0;
+    var conta_agua = 0;
+    var conta_gas = 0;
+    var conta_internet = 0;
+    var total= 0;
+
+    function calcular() {
+        var energia = Number(ipt_energia.value);
+        var bandeira = ipt_bandeira.value;
+        var agua = Number(ipt_agua.value);
+        var vazamento = Number(ipt_vazamento.value);
+        var gas = Number(ipt_gas.value);
+        var internet = Number(ipt_internet.value);
+        var telefone = ipt_telefone.value;
+
+        //Energia:
+        var valor_base= 0.75;
+
+        if(bandeira == "verde"){
+            conta_energia= energia * valor_base
+        }
+
+        div_msg.innerHTML= `${conta_energia} `;
+        //agua:
+
+
+
+
+
+
+
+
+    }
+
+</script>
