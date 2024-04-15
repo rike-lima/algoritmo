@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>One Piece</title>
+</head>
+
+<body>
+  <h1>Assistir One Piece</h1>
+  <div id="div_forms">
+    <span><b>Episódio que deseja começar assitindo:</b></span> <input type="text" id="ipt_ep"><br>
+    <span><b>Quantidade de tempo disponível:</b></span> <input type="text" id="ipt_tempo"><br>
+    <span><b>Unidade de tempo em:</b></span> <select name="select_tempo" id="slc_uni">
+      <option value="#" selected disabled>Selecione uma opção</option>
+      <option value="1">Hora</option>
+      <option value="2">Minuto</option>
+    </select><br>
+    <span><b>Pular abertura?</b></span> <select name="select_abertura" id="slc_abe">
+      <option value="#" selected disabled>Selecione uma opção</option>
+      <option value="1">Sim</option>
+      <option value="2">Não</option>
+    </select><br>
+    <span><b>Pular encerramento?</b></span> <select name="select_encerramento" id="slc_enc">
+      <option value="#" selected disabled>Selecione uma opção</option>
+      <option value="1">Sim</option>
+      <option value="2">Não</option>
+    </select><br>
+    <button onclick="analisar()">Assistir Episódios</button>
+    <div id="div_msg"></div>
+
+  </div>
+
+
+</body>
+
+</html>
+
+<script>
+  function analisar() {
+    var episodio = Number(ipt_ep.value);
+    var tempo = Number(ipt_tempo.value);
+    var unidade = slc_uni.value;
+    var abertura = slc_abe.value;
+    var encerramento = slc_enc.value;
+ //conversão da unidade de tempo
+    if (unidade == "1") {
+      tempo *= 60;
+    } else if (unidade == "#") {
+      alert('Insira a unidade de tempo.')
+    }
+//condição para episódios válidos
+    if (episodio < 1 || episodio > 1100) {
+      alert('O número do episódio é inválido.')
+
+    }
+
+
+
+  }
+</script>
