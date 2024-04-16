@@ -1,11 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Exrcício 8- Lista 6</title>
 </head>
+
 <body>
-    
+    Número: <input type="text" id="ipt_number"><br>
+    <button onclick="viva()">Viva o 7!</button>
+    <div id="div_msg"></div>
 </body>
+
 </html>
+
+<script>
+    function viva() {
+        div_msg.innerHTML = "";
+        var entrada = Number(ipt_number.value);
+        if (entrada >= 0 && entrada <= 200) {
+            for (var cont = 0; cont <= entrada; cont++) {
+                var resto = cont % 7
+                if (resto == 0) {
+                    div_msg.innerHTML += `${cont}<br>`;
+                }
+            }
+        } else {
+            alert('Valor inválido.')
+        }
+    }
+</script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 12- Lista 9</title>
+</head>
+
+<body>
+  Tabuada desejada: <input type="text" id="ipt_tabu"><br>
+  Limite da tabuada: <input type="text" id="ipt_limite"><br>
+  <button onclick="calcular()">Ver tabuada</button>
+  <div id="div_msg"></div>
+</body>
+
+</html>
+
+<script>
+  function calcular() {
+    var tabuada = Number(ipt_tabu.value);
+    var limite = Number(ipt_limite.value);
+
+    for (var cont = 1; cont <= limite; cont++) {
+      var resultado = tabuada * cont
+      if (resultado % 2 == 0) {
+        div_msg.style.color = "blue"
+        div_msg.innerHTML += `${tabuada}x${cont}=${resultado}<br>`
+      } else {
+        div_msg.style.color = "red"
+        div_msg.innerHTML += `${tabuada}x${cont}=${resultado}<br>`
+      }
+    }
+  }
+</script>

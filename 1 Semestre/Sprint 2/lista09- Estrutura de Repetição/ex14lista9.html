@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 14- Lista 9</title>
+</head>
+
+<body>
+  Informe sua idade: <input type="text" id="ipt_idade"><br>
+  <button onclick="fases()">Fases de vida</button>
+  <div id="div_msg"></div>
+</body>
+
+</html>
+
+<script>
+  function fases() {
+    var idade = Number(ipt_idade.value)
+
+    for (var cont = 0; cont <= idade; cont++) {
+   
+      if (cont >= 0 && cont <= 4) {
+        div_msg.innerHTML += `${cont} anos (Primeira infância)<br>`
+      } else if(cont>4 && cont<=6 ){
+        div_msg.innerHTML += `${cont} anos (Pré-Escolar)<br>`
+      } else if(cont>7 && cont<=10 ){
+        div_msg.innerHTML += `${cont} anos (Segunda infância)<br>`
+      } else if(cont>10 && cont<=18 ){
+        div_msg.innerHTML += `${cont} anos (Adolescência)<br>`
+      } else if(cont>18 && cont<=50 ){
+        div_msg.innerHTML += `${cont} anos (Adulto)<br>`
+      } else if(cont>50 && cont<=100 ){
+        div_msg.innerHTML += `${cont} anos (Melhor idade)<br>`
+      } else {
+        div_msg.innerHTML += `${cont} anos (Matusalém)<br>`
+      } 
+    }
+  }
+</script>
