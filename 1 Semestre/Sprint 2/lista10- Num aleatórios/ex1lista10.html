@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Númeors: <input type="text" id="ipt_numero">
+    <button onclick="gera()">gerar</button>
+    <div id="div_msg"></div>
+</body>
+
+</html>
+
+<script>
+    function gera() {
+        div_msg.innerHTML = "";
+        var numero = Number(ipt_numero.value)
+
+        var cont_inferior = 0
+        var cont_superior = 0
+
+        var total = 0
+
+
+        var maior_numero = 0;
+        var menor_numero = 1;
+
+
+        for (cont = 1; cont <= numero; cont++) {
+            var aleatorio = Math.random()
+            
+
+            total += aleatorio
+
+            if (aleatorio >= 0.5) {
+                div_msg.innerHTML += `${aleatorio}- Metade SUPERIOR;<br>`
+                cont_superior++
+            } else {
+                cont_inferior++
+                div_msg.innerHTML += `${aleatorio}- Metade INFERIOR;<br>`
+            }
+            if (aleatorio > maior_numero) {
+                maior_numero = aleatorio
+            }
+            if (aleatorio < menor_numero) {
+                menor_numero = aleatorio
+            }
+
+        }
+
+        var media = total / numero
+
+        div_msg.innerHTML += `<br>Total de números abaixo da metade: ${cont_inferior} <br> Total de números acima da metade: ${cont_superior}<br>`
+        div_msg.innerHTML += `Média total: ${media}<br>`
+        div_msg.innerHTML += `Maior número sorteado: ${maior_numero}<br>`
+        div_msg.innerHTML += `Menor número sorteado: ${menor_numero}<br>`
+
+
+
+    }
+</script>

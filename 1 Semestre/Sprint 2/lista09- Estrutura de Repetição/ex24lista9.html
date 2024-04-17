@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 23- Lista 9</title>
+</head>
+
+<body>
+    Informe um número: <input id="ipt_numero"></input><br>
+    <button onclick="ver()">Ver divisores</button>
+    <div id="div_msg"></div>
+</body>
+
+</html>
+
+<script>
+    function ver() {
+        var numero = Number(ipt_numero.value)
+        var primo = true;
+
+        for (var cont = 1; cont <= numero; cont++) {
+            if (numero % cont == 0) {
+                div_msg.innerHTML += `${cont}<br>`
+                if (numero != cont && cont != 1) {
+                    primo = false;
+                }
+            }
+        }
+
+        if (primo == true) {
+            div_msg.innerHTML += `${numero} é um número primo <br>`
+        }
+
+    }
+</script>

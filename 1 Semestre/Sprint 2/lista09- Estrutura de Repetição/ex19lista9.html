@@ -6,6 +6,26 @@
   <title>Exercício 19- Lista9</title>
 </head>
 <body>
-  
+  Informe a quantidade de depósitos feitos: <input type="text" id="ipt_quantidade"><br>
+  Informe o valor dos depósitos: <input type="text" id="ipt_valor"><br>
+  <button onclick="acompanhar()">Acompanhar grana</button>
+  <div id="div_msg"></div>
 </body>
 </html>
+
+<script>
+  function acompanhar(){
+  var quantidade= Number(ipt_quantidade.value);
+  var valor= Number(ipt_valor.value);
+  var soma= 0;
+
+  div_msg.innerHTML="";
+
+    for(var cont=1; cont<=quantidade; cont++){
+      soma+= valor
+      div_msg.innerHTML+= `${cont}° Mês: R$${soma}<br>`
+      
+    }
+    div_msg.innerHTML+= `Total guardado: R$ ${soma}`
+  }
+</script>
