@@ -11,7 +11,7 @@
   <h1>Assistir One Piece</h1>
   <div id="div_forms">
     <span><b>Episódio que deseja começar assitindo:</b></span> <input type="text" id="ipt_ep"><br>
-    <span><b>Quantidade de tempo disponível:</b></span> <input type="text" id="ipt_tempo"><br>
+    <span><b>Quantidade de tempo disponível:</b></span> <input type="text" id="ipt_tempoDisp"><br>
     <span><b>Unidade de tempo em:</b></span> <select name="select_tempo" id="slc_uni">
       <option value="#" selected disabled>Selecione uma opção</option>
       <option value="1">Hora</option>
@@ -40,22 +40,53 @@
 <script>
   function analisar() {
     var episodio = Number(ipt_ep.value);
-    var tempo = Number(ipt_tempo.value);
+    var tempoDisp = Number(ipt_tempoDisp.value);
     var unidade = slc_uni.value;
     var abertura = slc_abe.value;
     var encerramento = slc_enc.value;
- //conversão da unidade de tempo
+    var tempoEp = 24;
+    var mensagem = ""
+
+
+    //conversão da unidade de tempo
     if (unidade == "1") {
       tempo *= 60;
-    } else if (unidade == "#") {
-      alert('Insira a unidade de tempo.')
     }
-//condição para episódios válidos
+    //condição para episódios válidos
     if (episodio < 1 || episodio > 1100) {
       alert('O número do episódio é inválido.')
-
     }
 
+    //validações de abertura e encerramento
+    if (abertura == "1" && encerramento == "1") {
+      tempoEp -= 4
+    } else if (abertura == "1" && encerramento == "2") {
+      tempoEp -= 2
+    } else if (abertura == "2" && encerramento == "1") {
+      tempoEp -= 2
+    }
+
+    //repetição de eps e minutos
+    for (var contEp = episodio; tempoDisp > 0; contEp++) {
+      mensagem += `<br> Episódio: ${contEp}<br>`
+
+      for (var contMin = 1; contMin <= tempoEp; contMin++) {
+        if (tempoDisp > 0) {
+
+          if (abertura == "2" && contMin <= 2) {
+            mensagem += `Minuto ${contMin}: Assistindo Abertura<br>`
+
+          } else if (encerramento == "2" && contMin > (tempoEp - 2)) {
+            mensagem += `Minuto ${contMin}: Assistindo Encerramento<br>`
+
+          } else {
+            mensagem += `Minuto ${contMin}: Assistindo Episódio<br>`
+          }
+        }
+         tempoDisp--
+      }
+    }
+    div_msg.innerHTML += mensagem;
 
 
   }
