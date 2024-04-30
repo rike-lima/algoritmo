@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 7- Lista 11</title>
+</head>
+
+<body>
+    <input type="text" id="iptFilme">
+    <button onclick="cadastro()">Cadastrar Filme</button>
+    <div id="divMsg"></div>
+</body>
+
+</html>
+
+<script>
+
+    var listaFilme = []
+
+    function cadastro() {
+        var filme = iptFilme.value
+
+        listaFilme.push(filme)
+
+        /*for(var cont=1; cont<=listaFilme.length;cont++){
+        }
+        if(cont%2==0){
+            divMsg.style.color="red"
+            divMsg.innerHTML += `${filme}<br>`
+        } else {
+            
+            divMsg.style.color="blue"    
+        
+            divMsg.innerHTML += `${filme}<br>`
+        }*/
+
+        if(listaFilme.length%2==0){
+            divMsg.style.color="red"    
+        
+            divMsg.innerHTML += `${filme}<br>`
+        } else {
+            
+            divMsg.style.color="blue"    
+        
+            divMsg.innerHTML += `${filme}<br>`
+        }
+        
+
+        iptFilme.value= ''
+
+    }
+</script>

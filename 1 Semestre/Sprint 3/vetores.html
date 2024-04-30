@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula Vetores</title>
+</head>
+<body>
+    Fruta: <input type="text" id="iptFruta">
+    <button onclick="adicionar()">Adicionar</button>
+    <button onclick="pesquisar()">pesquisar</button>
+    <div id="div_msg"></div>
+</body>
+</html>
+
+<script>
+    var lista_frutas=[];
+    
+    function adicionar(){
+        var fruta= iptFruta.value
+
+        if(lista_frutas.indexOf(fruta) ==-1){
+            lista_frutas.push(fruta);
+        } else{
+            alert('Fruta já está na lista')
+        }
+
+
+        div_msg.innerHTML+= `${lista_frutas}<br>`;
+        
+    }
+
+    function pesquisar(){
+        var fruta= iptFruta.value
+        if(lista_frutas.indexOf(fruta) >=0){
+            alert(`${fruta}Já está na lista já está na lista`)
+        } else {
+            alert(`${fruta}Não está na lista já está na lista`)
+        }
+    
+    }
+</script>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2-Lista 11</title>
+</head>
+
+<body>
+    Destino viagem: <input type="text" id="iptViagem">
+    <button onclick="adicionar()">Adicionar</button><br>
+    <button onclick="primeiraViagem()">Primeira Viagem</button><br>
+    <button onclick="terceiraViagem()">Terceira Viagem</button><br>
+    <button onclick="ultimaViagem()">Última Viagem</button><br>
+    <div id="divMsg"></div>
+
+</body>
+
+</html>
+
+<script>
+    var listaViagem = [];
+
+    function adicionar() {
+        var destino = iptViagem.value
+
+        listaViagem.push(destino);
+    }
+
+    function primeiraViagem() {
+        var primeira = listaViagem[0]
+
+
+        if (primeira == undefined) {
+            divMsg.innerHTML = "Ainda não viajou";
+        } else {
+            divMsg.innerHTML = `Primeira viagem: ${primeira}`;
+
+        }
+    }
+
+    function terceiraViagem() {
+        var terceira = listaViagem[2]
+
+        if (terceira == undefined) {
+            divMsg.innerHTML = "Ainda não fez a terceira viagem";
+        } else {
+            divMsg.innerHTML = `Terceira viagem: ${terceira}`;
+        }
+    }
+
+    function ultimaViagem() {
+        var tamanhoLista = listaViagem.length
+        var ultima = listaViagem[tamanhoLista - 1]
+
+        if (ultima == undefined) {
+            divMsg.innerHTML = "Ainda não viajou";
+        } else {
+            divMsg.innerHTML = `Última viagem: ${ultima}`;
+
+        }
+    }
+
+
+
+
+</script>

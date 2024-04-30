@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3-Lista 11</title>
+</head>
+
+<body>
+   Bairros que morou: <input type="text" id="iptBairro">
+    <button onclick="cadastrar()">Cadastrar Bairro</button><br>
+   Número: <input type="text" id="iptInfo">
+   <button onclick="moradia()">Relembrar Moradia</button>
+    <div id="divMsg"></div>
+
+</body>
+
+</html>
+
+<script>
+    listaBairro=[];
+
+    function cadastrar(){
+        var bairro= iptBairro.value  
+        listaBairro.push(bairro)
+    }
+
+    function moradia(){
+        var numero= Number(iptInfo.value)
+        var info=numero-1   
+
+        if(listaBairro[info]==undefined){
+            divMsg.innerHTML= `Você ainda não morou em um ${numero}º bairro!`
+        } else{
+
+            divMsg.innerHTML= `${listaBairro[info]}`
+        }
+        
+
+    }
+</script>

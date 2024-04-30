@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 5- Lista 11</title>
+</head>
+
+<body>
+    <input type="text" id="iptFilme">
+    <button onclick="cadastro()">Cadastrar Filme</button>
+    <div id="divMsg"></div>
+</body>
+
+</html>
+
+<script>
+    listaFilmes = [];
+
+    function cadastro() {
+
+        var novoFilme = iptFilme.value;
+
+        listaFilmes.push(novoFilme)
+
+        var favorito= listaFilmes[0]
+
+        var terceiro= listaFilmes[2]
+
+        var total= listaFilmes.length
+
+        if(terceiro==undefined){
+            terceiro= "Ainda não existe"
+        }
+        divMsg.innerHTML = `Seu filme favorito: ${favorito}<br> Seu 3° filme favorito: ${terceiro}<br>Total de filmes cadastrados: ${total}`
+
+        iptFilme.value = ''
+
+    }
+</script>

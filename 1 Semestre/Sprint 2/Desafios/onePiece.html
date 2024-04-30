@@ -46,12 +46,14 @@
     var encerramento = slc_enc.value;
     var tempoEp = 24;
     var mensagem = ""
-
-
+    
+    
     //conversão da unidade de tempo
     if (unidade == "1") {
-      tempo *= 60;
+      tempoDisp *= 60;
     }
+    
+    var EpsAssistidos= tempoDisp/ tempoEp
     //condição para episódios válidos
     if (episodio < 1 || episodio > 1100) {
       alert('O número do episódio é inválido.')
@@ -87,6 +89,9 @@
       }
     }
     div_msg.innerHTML += mensagem;
+
+   
+    div_msg.innerHTML += `<br><br> Fim dos episódios!<br> Foram assistidos: ${EpsAssistidos} episódios.`
 
 
   }

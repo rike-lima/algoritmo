@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números aleatórios</title>
+</head>
+
+<body>
+    <button onclick="gerar()">Gerar</button>
+    <button onclick="gerar_0_10()">Gerarnovo</button>
+    <button onclick="gerar_5_20()">gerar 5 a 20</button>
+    <button onclick="gerarNovo()">gerar 24 a 49</button>
+    <button onclick="sorteio()">sortear 3</button>
+
+    <div id="div_mensagem"></div>
+
+</body>
+
+</html>
+
+
+<script>
+    function gerar() {
+        var aleatorio = Math.random();
+        div_mensagem.innerHTML += `Sorteador ${aleatorio}<br>`;
+    }
+
+    function gerar_0_10() {
+        var aleatorio = Math.random();
+        var novo_aleatorio = aleatorio * 10;
+        div_mensagem.innerHTML += `Sorteador ${novo_aleatorio}<br>`;
+    }
+
+    function gerar_5_20() {
+        var aleatorio = Math.random();
+        var novo_aleatorio = aleatorio * 15 + 5;
+        div_mensagem.innerHTML += `Sorteador ${novo_aleatorio}<br>`;
+    }
+    function gerarNovo() {
+        var min = 24;
+        var max = 49;
+        var intervalo= max - min;
+        var aleatorio = Math.random();
+
+    
+        
+        var novo_aleatorio = aleatorio * intervalo + min;
+
+        var decimal_2 = novo_aleatorio.toFixed(2);
+    
+        var inteiro=novo_aleatorio.toFixed(0)
+
+        div_mensagem.innerHTML += `Sorteador ${aleatorio} <br> ${novo_aleatorio}<br> ${decimal_2}<br> ${inteiro}`
+
+        
+        }
+
+        function sorteio(){
+            var aleatorio= (Math.random()*4-1).toFixed(0);
+
+            for(var cont=1; aleatorio != 3; cont++){
+
+            }
+                div_mensagem.innerHTML= `Você sorteou o número 3 em ${cont} tentaivas.`
+        }
+</script>

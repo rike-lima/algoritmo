@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4- Lista 11</title>
+</head>
+<body style="background-color: black; color: aliceblue;">
+    <input type="text" id="iptFilme"> 
+    <button onclick="cadastro()">Cadastrar Filme</button> 
+    <button onclick="consultar()">Ver favoritos</button>
+    <div id="divMsg"></div>
+</body>
+</html>
+
+<script>
+    listaFilmes=[]
+    
+    function cadastro(){
+        var filme=iptFilme.value
+        
+        listaFilmes.push(filme)
+        
+        iptFilme.value=""
+    }
+
+    function consultar(){
+        var total=listaFilmes.length 
+        
+        var favorito= listaFilmes[0]
+
+        var ultimo= listaFilmes[total-1]
+
+        divMsg.innerHTML= `${listaFilmes}<br> Total: ${total}<br> O filme que mais gosta é ${favorito}.<br> 
+        O filme que menos gosta é ${ultimo}.`
+    }
+</script>

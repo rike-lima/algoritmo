@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula Vetores</title>
+</head>
+
+<body>
+    Fruta: <input type="text" id="iptFruta">
+    <button onclick="pesquisar()">pesquisar</button>
+    <div id="div_msg"></div>
+</body>
+
+</html>
+
+<script>
+    var lista_frutas = ['maça', 'banana', 'laranja', 'morango'];
+
+    function pesquisar() {
+        var fruta = iptFruta.value
+        var tamanho_lista = lista_frutas.length;
+        var contadorFrutas = 0;
+
+        for (index = 0; index < tamanho_lista; index++) {
+
+            var frutaAtual = lista_frutas[index]
+            if (fruta == frutaAtual) {
+                contadorFrutas++
+                div_msg.innerHTML = `A ${fruta} existe na lista.`
+            } else{
+                div_msg.innerHTML = `Não existe a ${fruta} na lista.`
+            }
+
+        }
+    }
+
+
+</script>
