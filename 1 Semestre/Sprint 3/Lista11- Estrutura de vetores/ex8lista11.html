@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 8- Lista 11</title>
+</head>
+
+<body>
+    <input type="text" id="iptAluno"> <button onclick="cadastrar()">Cadastrar</button>
+    <div id="divMsg"></div>
+</body>
+
+</html>
+
+<script>
+    var listaAluno = []
+
+
+
+    function cadastrar() {
+        var aluno = iptAluno.value;
+        var inicio = listaAluno.length;
+
+        listaAluno.push(aluno)
+
+        divMsg.innerHTML = ""
+
+        for (var index = inicio; index >= 0; index--) {
+
+            var alunoAtual = listaAluno[index]
+
+            divMsg.innerHTML += `${alunoAtual}<br>`
+
+        }
+
+    }
+</script>

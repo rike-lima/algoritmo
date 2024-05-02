@@ -15,6 +15,7 @@
     <button onclick="ultimaViagem()">Última Viagem</button><br>
     <div id="divMsg"></div>
 
+
 </body>
 
 </html>
@@ -31,12 +32,10 @@
     function primeiraViagem() {
         var primeira = listaViagem[0]
 
-
         if (primeira == undefined) {
             divMsg.innerHTML = "Ainda não viajou";
         } else {
             divMsg.innerHTML = `Primeira viagem: ${primeira}`;
-
         }
     }
 
