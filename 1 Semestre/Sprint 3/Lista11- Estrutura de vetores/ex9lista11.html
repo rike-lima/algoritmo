@@ -13,6 +13,7 @@
     <button onclick="mostrar()">Mostrar projetos</button>
 
     <div id="divMsg"></div>
+
 </body>
 
 </html>
@@ -33,26 +34,28 @@
 
         if (qtdProjetos <= 4) {
             cargo = "Junior"
-        } else if(qtdProjetos>4 && qtdProjetos<=12){
+        } else if (qtdProjetos <= 12) {
             cargo = "Pleno"
         } else {
-            cargo='Sênior'
+            cargo = 'Sênior'
         }
 
-        divMsg.innerHTML = `Você já fez ${qtdProjetos} projetos. Por isso você é um profissional ${cargo}.<br>`
+        var mensagem = `Você já fez ${qtdProjetos} projetos. Por isso você é um profissional ${cargo}.<br>`
 
-        iptProjetos.value= ''
+        divMsg.innerHTML = mensagem;
+
+        iptProjetos.value = ''
 
     }
 
-    function mostrar(){
+    function mostrar() {
         var qtdProjetos = listaProjeto.length;
 
-        for(var index=qtdProjetos; index>0; index--){
+        for (var index = qtdProjetos-1; index >= 0; index--) {
 
-           var projetoAtual= listaProjeto[index-1]
+            var projetoAtual = listaProjeto[index]
 
-        divMsg.innerHTML += `<br>${projetoAtual}<br>`
+            divMsg.innerHTML += `<br>${projetoAtual}<br>`
 
         }
     }

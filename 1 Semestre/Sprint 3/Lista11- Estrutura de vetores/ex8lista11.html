@@ -21,13 +21,13 @@
 
     function cadastrar() {
         var aluno = iptAluno.value;
-        var inicio = listaAluno.length;
-
-        listaAluno.push(aluno)
+        listaAluno.push(aluno)  
+        
+        var tamanhoLista = listaAluno.length;
 
         divMsg.innerHTML = ""
 
-        for (var index = inicio; index >= 0; index--) {
+        for (var index = tamanhoLista-1; index >= 0; index--) {
 
             var alunoAtual = listaAluno[index]
 

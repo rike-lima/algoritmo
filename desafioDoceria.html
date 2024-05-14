@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio
+
+    </title>
+</head>
+
+<body>
+    Quantidade de Macaron: <input type="number" id="iptMacaron"><br>
+    Preço do Macaron: <input type="text" id="iptPrecoMacaron"></ipt><br><br>
+
+    Quantidade de Brigadeiro: <input type="number" id="iptBrigadeiro"><br>
+    Preço do Brigadeiro: <input type="text" id="iptPrecoBrigadeiro"></ipt><br><br>
+
+    Quantidade de Cupcake: <input type="number" id="iptCupcake"><br>
+    Preço do Cupcake: <input type="text" id="iptPrecoCupcake"></ipt><br><br>
+
+    Quantidade de iptiptCheesecake: <input type="number" id="iptCheesecake"><br>
+    Preço do Cheesecake: <input type="text" id="iptPrecoCheesecake"></ipt><br><br>
+
+    <button onclick="verificar()">Verificar vendas</button><br>
+
+    <div id="divMsg"></div>
+
+    
+
+
+
+
+</body>
+
+</html>
+
+<script>
+    function verificar() {
+
+        divMsg.innerHTML= ""
+        
+        var macaron = Number(iptMacaron.value); // quantidade de cada produto comprado
+        var brigadeiro = Number(iptBrigadeiro.value);
+        var cupcake = Number(iptCupcake.value);
+        var cheesecake = Number(iptCheesecake.value);
+
+        var precoMacaron = Number(iptPrecoMacaron.value) //preco de cada produto comprado
+        var precoBrigadeiro = Number(iptPrecoBrigadeiro.value)
+        var precoCupcake = Number(iptPrecoCupcake.value)
+        var precoCheesecake = Number(iptPrecoCheesecake.value)
+
+        if (precoMacaron < 0 || precoBrigadeiro < 0 || precoCupcake < 0 || precoCheesecake < 0) {
+            alert('O preço dos produtos não pode ser negativo!')
+        } else {
+            var totalM = macaron * precoMacaron;
+            var totalB = brigadeiro * precoBrigadeiro;
+            var totalCup = cupcake * precoCupcake;
+            var totalCheese = cheesecake * precoCheesecake;
+            var valorTotal = totalM + totalB + totalCup + totalCheese;
+            var qtdTotal = macaron + brigadeiro + cupcake + cheesecake;
+        }
+
+        var contador=1
+            
+                for (var contM = 1; contM <= macaron; contM++){
+                    divMsg.innerHTML += `Venda ${contador}- <img src="https://food.fnr.sndimg.com/content/dam/images/food/fullset/2014/4/11/0/FNM_050114-French-Macaroons-Recipe_s4x3.jpg.rend.hgtvcom.1280.960.suffix/1396993185599.jpeg" alt="Macaron" width="50px" height="50px"> - R$ ${precoMacaron} <br>`
+
+                    contador++
+                }
+
+            
+                for (var contB = 1; contB <= brigadeiro; contB++){
+                    divMsg.innerHTML += `Venda ${contador}- <img src="https://www.marajoaraalimentos.com.br/2018/wp-content/uploads/2020/07/349-653x400.jpg" alt="Brigadeiro" weigth="50px" height="40px"> - R$ ${precoBrigadeiro} <br>`
+                    contador++
+
+                }
+
+                for (var contCup = 1; contCup <= cupcake; contCup++){
+                    divMsg.innerHTML += `Venda ${contador}- <img src="https://img.freepik.com/psd-gratuitas/cupcake-de-fantasia-com-glace-azul-isolado-em-fundo-transparente_191095-9307.jpg" alt="cupcake" height="50px" width="50px">  - R$ ${precoCupcake} <br>`
+                    contador++
+
+                }
+
+                for (var contCheese = 1; contCheese <= cheesecake; contCheese++){
+                    divMsg.innerHTML += `Venda ${contador}- <img src="https://static.itdg.com.br/images/1200-630/183662472f5068aa591e3e92ed5bcdcb/shutterstock-1667986501-2-.jpg" alt="cheesecake" weigth="50px" height="40px"> - R$ ${precoCheesecake} <br>`
+                    contador++
+
+                }
+            
+                divMsg.innerHTML +=`<br> Com a quantidade de ${macaron} Macarons, ${brigadeiro} Brigadeiros, ${cupcake} Cupcakes e ${cheesecake} Cheesecakes, a venda totalizará R$${valorTotal}.`
+    
+    }
+
+
+
+
+
+</script>
