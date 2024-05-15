@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1- Lista 11</title>
+</head>
+<body>
+    Fruta: <input type="text" id="iptFruta">
+    <button onclick="pesquisar()">Pesquisar</button>
+    <div id="div_msg"></div>
+</body>
+</html>
+
+<script>
+
+    var lista_frutas= ['maça', 'laranja', 'morango']
+
+    function pesquisar(){
+        var fruta= iptFruta.value
+
+        if(lista_frutas.indexOf(fruta) ==-1){
+            div_msg.innerHTML+= `Não existe ${fruta} na lista<br>`;
+        } else{
+            div_msg.innerHTML+= `${fruta} já existe na lista<br>`;
+        }
+        
+    }
+</script>

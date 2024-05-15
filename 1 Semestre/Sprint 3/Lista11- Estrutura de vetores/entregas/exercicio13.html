@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 13- Lista 11</title>
+</head>
+
+<body>
+    <select name="gameResult" id="selectResultado">
+        <option value="#" disabled selected>Indique o resultado</option>
+        <option value="ganhou">Vitória</option>
+        <option value="perdeu">Derrota</option>
+        <option value="empatou">Empate</option>
+    </select>
+
+    <button onclick="registro()">Registrar jogo</button> <br>
+    <input type="text" id="iptGame" oninput="consulta()">
+    <div id="divMsg"></div>
+</body>
+
+</html>
+
+<script>
+
+    var listaResultado = []
+
+    function registro() {
+        var resultado = selectResultado.value;
+        var contGanhou = 0;
+        var contPerdeu = 0;
+        var contEmpatou = 0;
+        var pontos = 0;
+        var mensagemCampanha=''
+
+
+        if (resultado == "#") {
+            alert('Por favor, selecione um valor válido.')
+        } else {
+            listaResultado.push(resultado)
+
+            for (var i = 0; i < listaResultado.length; i++) {
+                var jogoAtual = listaResultado[i];
+
+                if (jogoAtual == "ganhou") {
+                    contGanhou++
+                    pontos += 3
+                } else if (jogoAtual == "empatou") {
+                    contEmpatou++
+                    pontos++
+                } else {
+                    contPerdeu++
+                }
+            }
+
+            var possiveis = listaResultado.length * 3;
+            var aproveitamento = (pontos / possiveis) * 100;
+
+            mensagemCampanha = ` O time teve: ${contGanhou} vitórias, ${contEmpatou} empates, ${contPerdeu} derrotas  
+
+                                 <br>Pontuação total: ${pontos} pontos  
+
+                                 <br>Aproveitamento: ${aproveitamento.toFixed(2)}%  `
+
+           divMsg.innerHTML= mensagemCampanha;
+
+        }
+
+
+
+    }
+    function consulta() {
+        var jogo = Number(iptGame.value);
+
+        var jogoBuscado = listaResultado[jogo - 1]
+        
+        var msgResultado=""
+
+        if (jogoBuscado == undefined) {
+            msgResultado = `<br>Não foi cadastrado um ${jogo}º jogo  `
+        } else {
+            
+            msgResultado=`<br>No ${jogo}º jogo, o time ${jogoBuscado}. `;
+          
+
+            }
+            divMsg.innerHTML += msgResultado;
+
+    }
+</script>

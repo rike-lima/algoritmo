@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 10- Lista 11</title>
+</head>
+<body>
+    Linhas de ônibus: <input type="text" id="iptLinha">
+    <button onclick="gravar()">Gravar Busão</button>
+    <button onclick="pesquisar()">Pesquisar</button>
+    <div id="divMsg"></div>
+</body>
+</html>
+
+<script>
+var listaOnibus= []
+
+    function gravar(){
+        var linha= iptLinha.value
+        listaOnibus.push(linha)
+
+        divMsg.innerHTML=''
+
+        for (var i = listaOnibus.length-1; i >=0; i--) {
+            var linhaAtual = listaOnibus[i];
+
+            divMsg.innerHTML+= `${linhaAtual}<br>`
+            
+        }
+    }
+
+    function pesquisar(){
+        var linha= iptLinha.value
+        var quantidade= 0
+        var position= []
+       
+      divMsg.innerHTML= ""
+        for (var i = 0; i <= listaOnibus.length; i++) {
+            var linhaAtual = listaOnibus[i];
+
+            if(linha==linhaAtual){
+                quantidade ++
+                position.push(i+1)
+                
+            }}
+            
+        if (quantidade>0) {
+
+            divMsg.innerHTML= `Você já pegou essa linha ${quantidade} vezes, nessa ordem: ${position}. `
+        } else{
+            divMsg.innerHTML= "Você nunca pegou essa linha."
+        }
+        
+    }
+</script>
