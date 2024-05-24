@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 20- Lista 11</title>
+</head>
+<body>
+    Nome produto: <input type="text" id="iptProduto">
+    Preço produto: <input type="text" id="iptPreco">
+    <button onclick="cadastrar()">Cadastrar</button><br>
+    <button onclick="atualizar()">Atualizar estoque</button>
+    <div id="divMsg"></div>
+</body>
+</html>
+
+<script>
+    var listaProduto=[];
+    var listaPreco=[];
+
+    function cadastrar(){
+        var produto=iptProduto.value;
+        var preco= Number(iptPreco.value);
+
+        if(preco<=0||listaProduto.length<3){
+            alert('Produto ou preço inválidos, produto deve ter mais de 2 letras e o preço deve ser maior que 0.')
+        } else{
+            alert('Produto cadastrado com sucesso')
+
+            listaProduto.push(produto);
+            listaPreco.push(preco);
+
+        }
+
+    }
+
+    function atualizar(){
+            
+    }
+</script>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 19- Lista 11</title>
+</head>
+
+<body>
+    Filme: <input type="text" id="iptFilme">
+    <button onclick="cadastrar()">Cadastrar</button>
+    <button onclick="listar()">Listar Filmes</button><br><br>
+    De: <input type="text" id="iptInicio">
+    Até: <input type="text" id="iptFinal">
+    <button onclick="filtrar()">Filtra Filmes</button>
+
+    <div id="divMsg"></div>
+
+</body>
+
+</html>
+
+<script>
+    var listaFilmes = []
+    function cadastrar() {
+        var filme = iptFilme.value;
+
+        listaFilmes.push(filme);
+
+        divMsg.innerHTML= `Você já assistiu ${listaFilmes.length} filmes.<br>`
+    }
+
+    function listar(){
+for (var i = listaFilmes.length-1; i >= 0; i--) {
+    var filmeAtual = listaFilmes[i];
+    
+    divMsg.innerHTML += `Filme ${i+1}: ${filmeAtual}<br>`
+}
+    }
+
+    function filtrar(){
+        var inicio= Number(iptInicio.value)-1;
+        var final= Number(iptFinal.value)-1;
+
+            for (var i = final; i >=inicio; i--) {
+            var filmeAtual = listaFilmes[i];
+
+            divMsg.innerHTML+= `Filme ${i+1}: ${filmeAtual}<br>`
+            
+        }
+
+
+    }
+</script>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 18- Lista 11</title>
+</head>
+<body>
+    Cadastrar música: <input type="text" id="iptMusica">
+    <button onclick="cadastrar()">Cadastrar</button> <button onclick="exibir()">Exibir</button>
+    De <input type="number" id="iptPrimeiroNum">
+    Até <input type="number" id="iptSegundoNum">
+    <button  onclick="filtrar()">Filtrar</button>
+    <div id="divMsg"></div>
+</body>
+</html>
+
+<script>
+var listaMusica=[];
+
+    function cadastrar(){
+     var musica=iptMusica.value;
+
+     listaMusica.push(musica)
+    }
+    
+    function exibir(){
+        
+             divMsg.innerHTMl= ''
+             
+             for (var i = 0; i < listaMusica.length; i++) {
+                var musicaAtual = listaMusica[i];
+               
+                divMsg.innerHTML+= `Música ${i+1}: ${musicaAtual}<br>`
+            }
+
+    }
+
+
+    function filtrar(){
+        var inicio= Number(iptPrimeiroNum.value);
+        var final= Number(iptSegundoNum.value);
+        
+        divMsg.innerHTML=`` 
+        for (var i = inicio-1; i <final; i++) {
+            var musicaAtual = listaMusica[i];
+            divMsg.innerHTML+=`Música ${i+1}: ${musicaAtual}<br>`
+        }
+    }
+</script>

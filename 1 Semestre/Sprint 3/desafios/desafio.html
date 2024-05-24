@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio Hamburgueria</title>
+</head>
+
+<body>
+    <div id="prepHamburguer" style="margin-top: 10px;">
+        Ingrediente:<input type="text" id="iptIngrediente"><br>
+        Peso em gramas:<input type="text" id="iptPesoGr"><br>
+        Preço por quilo<input type="text" id="iptPrecoKg"> <br>
+        <button onclick="cadastrar()">Adicionar ingredientes no blend</button>
+    </div>
+    <div id="regHamburguer" style="margin-top: 10px;">
+        <input type="text" id="nomeHamburguer"><br>
+        <button>Preparar e registrar Bled</button><br>
+    </div>
+
+    <div id="montarCardapio" style="margin-top: 10px;">
+        <button id="montarCardapio">Montar Cardápio</button>
+    </div>
+    <div id="divMsg" style="margin-top: 10px;"></div>
+</body>
+
+</html>
+
+<script>
+    var listaIngrediente=[];
+    var listaPeso=[];
+    var listaPreco=[];
+
+    function cadastrar(){
+        var ingrediente= iptIngrediente.value;
+        var peso=iptPesoGr.value;
+        var preco=iptPrecoKg.value;
+
+        listaIngrediente.push(ingrediente)
+        listaPeso.push(peso)
+        listaPreco.push(preco)
+    }
+</script>
