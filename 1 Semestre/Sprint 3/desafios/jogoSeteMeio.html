@@ -39,23 +39,73 @@
     function gerarMao() {
 
         var sorteioCarta = Math.round(Math.random() * 9) + 1;
+        var sorteioNaipe = Math.round(Math.random() * 3) + 1;
 
         var opcoesCartas = ["A", "2", "3", "4", "5", "6", "7", "J", "Q", "K"];
         var valorCartas = [1, 2, 3, 4, 5, 6, 7, 0.5, 0.5, 0.5]
-        listaCartas.push(opcoesCartas[sorteioCarta - 1]);
-        listaValores.push(valorCartas[sorteioCarta - 1]);
+        var opcoesNaipe = ["♠", "♥", "♣", "♦"];
 
-        pontosJogador += valorCartas[sorteioCarta - 1]
-        console.log(pontosJogador, pontosDealer)
-        //   divMsg.innerHTML= ''
+
+        var cartaAtual = (opcoesCartas[sorteioCarta - 1]) + (opcoesNaipe[sorteioNaipe - 1]);
+
+
+        if (listaCartas.indexOf(cartaAtual) >= 0) {
+
+            // sorteioCarta = Math.round(Math.random() * 9) + 1;
+            // cartaAtual = (opcoesCartas[sorteioCarta - 1]) + (opcoesNaipe[sorteioNaipe - 1]);
+
+            console.log('indo para o desempate do Jogador')
+
+            desempatePlayer()
+        } else {
+
+
+            listaCartas.push(cartaAtual);
+            listaValores.push(valorCartas[sorteioCarta - 1]);
+
+            pontosJogador += valorCartas[sorteioCarta - 1]
+            console.log(pontosJogador, cartaAtual)
+
+        }
+
+    }
+
+    function desempatePlayer() {
+        var sorteioCarta = Math.round(Math.random() * 9) + 1;
+        var sorteioNaipe = Math.round(Math.random() * 3) + 1;
+
+        var opcoesCartas = ["A", "2", "3", "4", "5", "6", "7", "J", "Q", "K"];
+        var valorCartas = [1, 2, 3, 4, 5, 6, 7, 0.5, 0.5, 0.5]
+        var opcoesNaipe = ["♠", "♥", "♣", "♦"];
+
+
+        var cartaAtual = (opcoesCartas[sorteioCarta - 1]) + (opcoesNaipe[sorteioNaipe - 1]);
+
+        if (listaCartas.indexOf(cartaAtual) >= 0) {
+            console.table('voltando para a geração de mão padrão')
+
+            gerarMao()
+        } else {
+
+            listaCartas.push(cartaAtual);
+            listaValores.push(valorCartas[sorteioCarta - 1]);
+
+            pontosJogador += valorCartas[sorteioCarta - 1]
+            console.table(pontosJogador, cartaAtual)
+
+        }
 
     }
 
     function gerarMaoDealer() {
         var sorteioCarta = Math.round(Math.random() * 9) + 1;
+        var sorteioNaipe = Math.round(Math.random() * 3) + 1;
 
         var opcoesCartas = ["A", "2", "3", "4", "5", "6", "7", "J", "Q", "K"];
         var valorCartas = [1, 2, 3, 4, 5, 6, 7, 0.5, 0.5, 0.5]
+        var opcoesNaipe = ["♠", "♥", "♣", "♦"];
+
+
         listaCartas.push(opcoesCartas[sorteioCarta - 1]);
         listaValores.push(valorCartas[sorteioCarta - 1]);
 

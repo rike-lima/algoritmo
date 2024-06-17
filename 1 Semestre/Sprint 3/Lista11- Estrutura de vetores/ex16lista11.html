@@ -32,36 +32,55 @@
 
     function relatar() {
         var total = listaProduto.length
-        var msgProduto= ''
-        var msgCompra= ''
-        var maisCaro= listaCompra[0]
-        var maisBarato= listaCompra[0]
-        
+        var msgProduto = ''
+        var msgCompra = ''
+        var maisCaro = listaCompra[0]
+        var maisBarato = listaCompra[0]
+        var produtoCaro = 0;
+        var produtoBarato = 0;
+        var valorEstoque = 0;
+        var venda=0;
+        var vendaTotal=0;
 
 
-         divMsg.innerHTML=""
 
-        divMsg.innerHTML=`Total:${total}<br>`
-        
+        divMsg.innerHTML = ""
+
+        divMsg.innerHTML = `Total:${total}<br>`
+
         for (var i = 0; i < total; i++) {
-            var produtoAtual= listaProduto[i]
-            var precoAtual= listaCompra[i]
-    
-            if(precoAtual>maisCaro){
-                maisCaro=precoAtual
-            } else if(precoAtual>maisBarato){
-                maisBarato= precoAtual
-            }
-                    
-            divMsg.innerHTML += `
-            <br>Produto ${i+1}: ${produtoAtual}<br>
+            var produtoAtual = listaProduto[i]
+            var precoAtual = listaCompra[i]
+            valorEstoque += precoAtual
+            venda=precoAtual*1.25
+            vendaTotal+=venda
 
-            Preço de compra: R$${precoAtual}. Vender por R$${precoAtual*1.25}<br>`  
+            if (precoAtual > maisCaro) {
+                maisCaro = precoAtual
+                produtoCaro = i
+            } else if (precoAtual > maisBarato) {
+                maisBarato = precoAtual
+                produtoBarato = i
+            }
+
+            divMsg.innerHTML += `
+            <br>Produto ${i + 1}: ${produtoAtual}<br>
+
+            Preço de compra: R$${precoAtual}. Vender por R$${venda}<br>` 
             
+            var media= vendaTotal/total
+
         }
 
 
-        divMsg.innerHTML +=``
+        divMsg.innerHTML += `<br>
+        Produto mais caro: ${listaProduto[produtoCaro]} <br>
+        
+        Produto mais barato: ${listaProduto[produtoBarato]}<br>
+        
+        Valor estoque: ${valorEstoque}<br>
+        
+        Média: ${media}`
 
 
 
