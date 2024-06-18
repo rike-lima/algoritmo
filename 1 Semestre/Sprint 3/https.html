@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Cadastro de Endereços</h1>
+    <label>
+        Nome: <input type="text" id="ipt_nome"><br>
+    </label>
+    <label>
+        CEP: <input type="text" id="ipt_cep" oninput="buscar()"><br>
+    </label>
+    <label>
+        Logradouro: <input type="text" id="ipt_logradouro"><br>
+    </label>
+    <label>
+        Complemento: <input type="text" id="ipt_complemento"><br>
+    </label>
+    <label>
+        Bairro: <input type="text" id="ipt_bairro"><br>
+    </label>
+    <label>
+        Cidade <input type="text" id="ipt_cidade"><br>
+    </label>
+    <label>
+        Estado <input type="text" id="ipt_estado"><br>
+    </label>
+    <button onclick="buscar()">Buscar</button>
+</body>
+
+</html>
+
+<script>
+    function buscar() {
+
+        var cep=ipt_cep.value
+        if(cep==8){
+
+            fetch(`https://viacep.com.br/ws/${cep}/json/`)
+                .then(function (respostaServidor) {
+    
+                    respostaServidor.json()
+                        .then(function (respostaFormatada) {
+                            console.log(respostaFormatada)
+                            ipt_cep.value = respostaFormatada.cep;
+                            ipt_logradouro.value = respostaFormatada.logradouro;
+                            ipt_complemento.value = respostaFormatada.complemento;
+                            ipt_bairro.value = respostaFormatada.bairro;
+                            ipt_cidade.value = respostaFormatada.localidade;
+                            ipt_estado.value = respostaFormatada.uf;
+    
+                        })
+                })
+                .catch(function (error) {
+                    console.log(error)
+                })
+        }
+    }
+</script>

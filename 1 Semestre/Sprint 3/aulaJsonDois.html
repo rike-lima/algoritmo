@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Nome: <input id="ipt_nome"></input><br>
+    SObrenome <input type="text" id="ipt_sobrenome"><br>
+    Idade: <input type="text" id="ipt_idade"><br>
+    <button onclick="cadastrar()">Cadastrar</button>
+</body>
+
+</html>
+
+<script>
+    var lista_usuario = []
+    function cadastrar() {
+
+        var nome = ipt_nome.value;
+        var sobrenome = ipt_sobrenome.value;
+        var idade = ipt_idade.value;
+
+        var usuario = {
+            nome: nome,
+            sobrenome: sobrenome,
+            idade: idade,
+
+            //nome,
+            //sobrenome,
+            //idade
+
+        }
+
+        usuario.proproedadeExcluir= true;
+        delete usuario.proproedadeExcluir;
+
+        lista_usuario.push(usuario)
+
+
+
+        console.log(usuario)
+    }
+</script>
